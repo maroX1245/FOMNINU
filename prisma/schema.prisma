@@ -1,0 +1,77 @@
+// FOMNINU Student Guide - Prisma Schema
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
+// New Ismailia Al-Ahlieh University (FOMNINU)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Admin user for the complaints dashboard (used by src/lib/auth.ts)
+model Admin {
+  id           String      @id @default(cuid())
+  username     String      @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+// Student complaint submitted via the complaint form
+model Complaint {
+  id          String          @id @default(cuid())
+  studentName String
+  studentId   String
+  issueType   String
+  message     String
+  status      ComplaintStatus @default(PENDING)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+// Academic module of the integrated medical program
+model Module {
+  id            String     @id @default(cuid())
+  title         String
+  description   String?
+  type          ModuleType @default(SYSTEM)
+  orderIndex    Int        @default(0)
+  durationWeeks Int        @default(1)
+  resources     Resource[]
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+}
+
+// Learning resource (lecture, lab, clinical skill) attached to a module
+model Resource {
+  id        String       @id @default(cuid())
+  title     String
+  url       String?
+  type      ResourceType @default(LECTURE)
+  module    Module?      @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  moduleId  String?
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+}
+
+enum ComplaintStatus {
+  PENDING
+  REVIEWED
+  RESOLVED
+}
+
+enum ModuleType {
+  SYSTEM
+  CLINICAL
+  ELECTIVE
+}
+
+enum ResourceType {
+  LECTURE
+  LAB
+  CLINICAL_SKILL
+}

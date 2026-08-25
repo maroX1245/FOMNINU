@@ -580,7 +580,7 @@ export default function Home() {
       </Section>
 
       {/* Strategy Section */}
-      <Section className="bg-slate-900/50 backdrop-blur-sm">
+      <Section id="strategy" className="bg-slate-900/50 backdrop-blur-sm">
         <h2 className="section-title neon-text">🎯 الاستراتيجيات التعليمية</h2>
         
         <GlassCard className="max-w-4xl mx-auto mt-12" hover={false}>
