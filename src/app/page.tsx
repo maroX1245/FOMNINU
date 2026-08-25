@@ -2,7 +2,7 @@
 
 // Main Page Component - Complete FOMNINU Guide
 // Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
-// New Ismailia National University - Faculty of Medicine
+// New Ismailia Al-Ahlieh University - Faculty of Medicine
 
 import { useRef, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -203,7 +203,7 @@ export default function Home() {
               <span className="neon-text">نظامك في كبسولة</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-white/80 mb-4">
-              كلية الطب البشري - جامعة الإسماعيلية الوطنية الجديدة
+              كلية الطب البشري - جامعة الإسماعيلية الأهلية
             </h2>
             <motion.p
               className="text-3xl md:text-5xl font-bold text-white/90 mb-8"
@@ -268,7 +268,7 @@ export default function Home() {
           >
             <Image
               src="/images/campus2.jpg"
-              alt="جامعة الإسماعيلية الوطنية الجديدة"
+              alt="جامعة الإسماعيلية الأهلية"
               width={800}
               height={400}
               className="w-full h-64 object-cover"

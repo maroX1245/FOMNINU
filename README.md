@@ -8,7 +8,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue?style=for-the-badge&logo=typescript)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?style=for-the-badge&logo=postgresql)
 
-**دليل الطالب الرسمي - كلية الطب البشري - جامعة الإسماعيلية الوطنية الجديدة FOMNINU 2026-2031**
+**دليل الطالب الرسمي - كلية الطب البشري - جامعة الإسماعيلية الأهلية FOMNINU 2026-2031**
 
 🎓 **Full-Stack Arabic Medical Education Website with 3D Graphics**
 
@@ -225,7 +225,7 @@ Access the admin panel at `/admin`
 
 **Mohamed Magdy**  
 🎓 5th Year Medical Student  
-🏥 Faculty of Medicine, New Ismailia National University (FOMNINU)  
+🏥 Faculty of Medicine, New Ismailia Al-Ahlieh University (FOMNINU)  
 📅 Class of 2026-2031
 
 </div>
@@ -240,7 +240,7 @@ This project is for educational purposes. All rights reserved © 2026
 
 ## 🙏 Acknowledgments | الشكر والتقدير
 
-- Faculty of Medicine, New Ismailia National University
+- Faculty of Medicine, New Ismailia Al-Ahlieh University
 - Next.js and React communities
 - Three.js and React Three Fiber teams
 - All medical students who contributed feedback

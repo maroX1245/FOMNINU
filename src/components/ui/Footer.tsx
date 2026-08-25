@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4 neon-text">عن الدليل</h4>
             <p className="text-white/60 text-sm leading-relaxed">
-              دليل الطالب الرسمي لكلية الطب البشري - جامعة الإسماعيلية الوطنية الجديدة FOMNINU
+              دليل الطالب الرسمي لكلية الطب البشري - جامعة الإسماعيلية الأهلية FOMNINU
               للعام الجامعي ٢٠٢٦-٢٠٣١
             </p>
           </div>
@@ -49,7 +49,7 @@ export default function Footer() {
           className="pt-8 border-t border-white/10 text-center"
         >
           <p className="text-white/50 text-sm mb-2">
-            © ٢٠٢٦ جميع الحقوق محفوظة - كلية الطب البشري - جامعة الإسماعيلية الوطنية الجديدة FOMNINU
+            © ٢٠٢٦ جميع الحقوق محفوظة - كلية الطب البشري - جامعة الإسماعيلية الأهلية FOMNINU
           </p>
           <p className="text-medical-cyan font-medium">
             🎓 تم التطوير Full-Stack بواسطة:{' '}

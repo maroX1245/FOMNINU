@@ -1,6 +1,6 @@
 // FOMNINU Student Guide - Comprehensive Database Seed
 // Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
-// New Ismailia National University - Version: 2026-2031
+// New Ismailia Al-Ahlieh University - Version: 2026-2031
 
 import { PrismaClient, ComplaintStatus, ModuleType, ResourceType } from '@prisma/client';
 import bcrypt from 'bcryptjs';
