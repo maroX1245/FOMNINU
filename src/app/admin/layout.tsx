@@ -1,7 +1,7 @@
 // Admin Root Layout with Session Provider
 // Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
-import './globals.css';
+import '../globals.css';
 import Providers from './providers';
 
 export const metadata = {
