@@ -1,6 +1,6 @@
-// FOMSCU Student Guide Database Schema
-// Developed by: Mohamed Magdy - 5th Year Medical Student at FOMSCU
-// Version: 2023-2024
+// FOMSCU Student Guide Database Schema - Updated with Course Details
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Version: 2026-2031
 
 generator client {
   provider = "prisma-client-js"
@@ -101,4 +101,113 @@ model ProgramPhase {
   updatedAt   DateTime @updatedAt
 
   @@map("program_phases")
+}
+
+// Module model - stores detailed module information
+model Module {
+  id              String   @id @default(cuid())
+  name            String
+  nameAr          String
+  type            ModuleType
+  year            Int
+  semester        Int
+  duration        String   // e.g., "7 أسابيع"
+  subjects        String[] // Array of subjects
+  description     String   @db.Text
+  orderIndex      Int      @default(0)
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("modules")
+}
+
+enum ModuleType {
+  FOUNDATION
+  SYSTEMIC
+  CLINICAL
+}
+
+// Exam model - stores exam types and grading
+model ExamType {
+  id            String   @id @default(cuid())
+  name          String
+  code          String   // e.g., "MCQ", "OSPE", "MEQ"
+  percentage    Int      // e.g., 40 for OSPE
+  description   String   @db.Text
+  hasCompassion Boolean  @default(true) // Whether compassion marks apply
+  orderIndex    Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("exam_types")
+}
+
+// Group model - stores group A and B info
+model StudentGroup {
+  id          String   @id @default(cuid())
+  name        String   // "Group A" or "Group B"
+  description String   @db.Text
+  startDay    String   // "Tuesday" or "Wednesday"
+  orderIndex  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("student_groups")
+}
+
+// Weekly Schedule model
+model WeeklySchedule {
+  id          String   @id @default(cuid())
+  day         String
+  groupType   String   // "A" or "B"
+  activities  ScheduleActivity[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("weekly_schedules")
+}
+
+type ScheduleActivity {
+  name: String
+  time: String
+  type: String // "lecture", "practical", "seminar", "skill_lab"
+  attendance: Boolean // Whether attendance is required
+}
+
+// Attendance rules
+model AttendanceRule {
+  id          String   @id @default(cuid())
+  activityType String  // "practical", "class", "seminar", "skill_lab"
+  maxAbsence  Int      // Maximum allowed absence percentage
+  penalty     String   @db.Text // What happens when exceeded
+  description String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("attendance_rules")
+}
+
+// Study Resources
+model StudyResource {
+  id          String   @id @default(cuid())
+  name        String
+  type        ResourceType
+  url         String?
+  description String   @db.Text
+  isRecommended Boolean @default(false)
+  year        Int?     // Which year it's useful for
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("study_resources")
+}
+
+enum ResourceType {
+  PDF
+  VIDEO
+  CHANNEL
+  BOOK
+  AI_TOOL
+  TELEGRAM
 }
