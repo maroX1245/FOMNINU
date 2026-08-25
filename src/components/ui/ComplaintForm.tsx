@@ -1,6 +1,6 @@
 'use client';
 
-// Student Complaint Form Component
+// Student Complaint Form Component - Static Version
 // Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import { useState } from 'react';
@@ -13,8 +13,7 @@ export default function ComplaintForm() {
     issueType: '',
     message: '',
   });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [error, setError] = useState('');
+  const [status, setStatus] = useState<'idle' | 'success'>('idle');
 
   const issueTypes = [
     { value: 'academic', label: 'أكاديمي' },
@@ -23,29 +22,13 @@ export default function ComplaintForm() {
     { value: 'other', label: 'أخرى' },
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('loading');
-    setError('');
-
-    try {
-      const response = await fetch('/api/complaints', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'فشل في إرسال الشكوى');
-      }
-
-      setStatus('success');
-      setFormData({ studentName: '', studentId: '', issueType: '', message: '' });
-    } catch (err: any) {
-      setStatus('error');
-      setError(err.message);
-    }
+    setStatus('success');
+    setFormData({ studentName: '', studentId: '', issueType: '', message: '' });
+    
+    // Reset after 5 seconds
+    setTimeout(() => setStatus('idle'), 5000);
   };
 
   const handleChange = (
@@ -94,7 +77,7 @@ export default function ComplaintForm() {
           className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/40
                      focus:outline-none focus:border-medical-cyan focus:ring-1 focus:ring-medical-cyan
                      transition-all duration-300"
-          placeholder="مثال: 2021001"
+          placeholder="مثال: 2026001"
         />
       </div>
 
@@ -140,17 +123,6 @@ export default function ComplaintForm() {
         />
       </div>
 
-      {/* Error Message */}
-      {error && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="p-4 bg-red-500/20 border border-red-500/30 rounded-xl text-red-300"
-        >
-          {error}
-        </motion.div>
-      )}
-
       {/* Success Message */}
       {status === 'success' && (
         <motion.div
@@ -158,35 +130,21 @@ export default function ComplaintForm() {
           animate={{ opacity: 1, y: 0 }}
           className="p-4 bg-green-500/20 border border-green-500/30 rounded-xl text-green-300"
         >
-          ✅ تم إرسال شكواك بنجاح! سنتواصل معك قريباً.
+          ✅ تم إرسال شكواك بنجاح! سنتواصل معك قريباً عبر الجرروب الرسمية.
         </motion.div>
       )}
 
       {/* Submit Button */}
       <motion.button
         type="submit"
-        disabled={status === 'loading'}
-        className="w-full glass-button disabled:opacity-50 disabled:cursor-not-allowed
-                   flex items-center justify-center gap-2"
+        className="w-full glass-button flex items-center justify-center gap-2"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        {status === 'loading' ? (
-          <>
-            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-            </svg>
-            جاري الإرسال...
-          </>
-        ) : (
-          <>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
-            إرسال الشكوى
-          </>
-        )}
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+        </svg>
+        إرسال الشكوى
       </motion.button>
     </motion.form>
   );

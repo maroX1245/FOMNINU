@@ -24,11 +24,12 @@ export default function Navigation({ scrollToSection }: NavProps) {
 
   const navLinks = [
     { id: 'home', label: 'الرئيسية' },
-    { id: 'about', label: 'عن الكلية' },
-    { id: 'timeline', label: 'النشأة' },
-    { id: 'strategy', label: 'الاستراتيجيات' },
-    { id: 'program', label: 'البرنامج' },
-    { id: 'complaints', label: 'صندوق الشكاوى' },
+    { id: 'about', label: 'عن النظام' },
+    { id: 'modules', label: 'الموديولات' },
+    { id: 'exams', label: 'الامتحانات' },
+    { id: 'schedule', label: 'الجدول' },
+    { id: 'resources', label: 'المصادر' },
+    { id: 'complaints', label: 'الشكاوى' },
   ];
 
   return (
@@ -48,9 +49,9 @@ export default function Navigation({ scrollToSection }: NavProps) {
           <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-medical-cyan to-medical-blue flex items-center justify-center">
             <span className="text-white font-bold text-lg">F</span>
           </div>
-<span className="font-bold text-lg hidden md:block neon-text">
-              دليل FOMNINU
-            </span>
+          <span className="font-bold text-lg hidden md:block neon-text">
+            دليل FOMNINU
+          </span>
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -66,19 +67,6 @@ export default function Navigation({ scrollToSection }: NavProps) {
             </motion.button>
           ))}
         </div>
-
-        {/* Admin Link */}
-        <motion.a
-          href="/admin"
-          className="hidden md:flex items-center gap-2 glass-button text-sm"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
-          لوحة التحكم
-        </motion.a>
 
         {/* Mobile Menu Button */}
         <button
@@ -117,12 +105,6 @@ export default function Navigation({ scrollToSection }: NavProps) {
                   {link.label}
                 </button>
               ))}
-              <a
-                href="/admin"
-                className="block w-full text-center glass-button mt-4"
-              >
-                لوحة التحكم
-              </a>
             </div>
           </motion.div>
         )}
