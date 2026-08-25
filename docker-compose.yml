@@ -1,0 +1,41 @@
+# Docker Compose for FOMSCU Student Guide
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: fomscu_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: fomscu_guide
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: fomscu_app
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/fomscu_guide"
+      NEXTAUTH_URL: "http://localhost:3000"
+      NEXTAUTH_SECRET: "fomscu-docker-secret-key"
+      ADMIN_USERNAME: "admin"
+      ADMIN_PASSWORD: "admin123"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./src:/app/src
+      - ./prisma:/app/prisma
+
+volumes:
+  postgres_data:
