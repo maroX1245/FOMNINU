@@ -6,13 +6,10 @@
 
 import { useRef, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation, GlassCard, ComplaintForm, Accordion, AnimatedPieChart, Section, Footer } from '@/components/ui';
 
 // Dynamically import 3D components (client-side only)
-const DNAHelix = dynamic(() => import('@/components/3d/DNAHelix'), { ssr: false });
-const ParticleBackground = dynamic(() => import('@/components/3d/ParticleBackground'), { ssr: false });
 const Timeline3D = dynamic(() => import('@/components/3d/Timeline3D'), { ssr: false });
 const StrategyIcons3D = dynamic(() => import('@/components/3d/AnimatedIcons'), { ssr: false });
 
@@ -161,8 +158,6 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       {/* 3D Background */}
-      <ParticleBackground />
-      <DNAHelix />
 
       {/* Navigation */}
       <Navigation scrollToSection={scrollToSection} />
@@ -175,22 +170,14 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* University Badge */}
             <motion.div
-              className="mb-6"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.3, type: 'spring' }}
+              className="mb-6 mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border border-cyan-200 bg-white text-3xl text-cyan-600 shadow-lg shadow-cyan-100"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              aria-label="هوية FOMNINU"
             >
-              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-medical-cyan shadow-lg shadow-medical-cyan/30 bg-slate-800">
-                <Image
-                  src="/images/campus1.jpg"
-                  alt="FOMNINU Campus"
-                  width={128}
-                  height={128}
-                  className="object-cover w-full h-full"
-                />
-              </div>
+              ✚
             </motion.div>
             
             <div className="mb-4">
@@ -258,23 +245,6 @@ export default function Home() {
       <Section id="about" className="bg-slate-900/50 backdrop-blur-sm">
         <div ref={sectionRefs.about}>
           <h2 className="section-title neon-text">🎯 نظرة عامة على النظام</h2>
-          
-          {/* University Image */}
-          <motion.div
-            className="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src="/images/campus2.jpg"
-              alt="جامعة الإسماعيلية الأهلية"
-              width={800}
-              height={400}
-              className="w-full h-64 object-cover"
-            />
-          </motion.div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
             <GlassCard delay={0.1}>
               <div className="text-4xl mb-4">📦</div>
