@@ -1,7 +1,7 @@
 'use client';
 
 // Admin Dashboard Page
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';

@@ -1,5 +1,5 @@
 // 3D Components Index
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 export { default as DNAHelix } from './DNAHelix';
 export { default as ParticleBackground } from './ParticleBackground';

@@ -1,12 +1,12 @@
 // Admin Root Layout with Session Provider
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import './globals.css';
 import Providers from './providers';
 
 export const metadata = {
-  title: 'لوحة التحكم - FOMSCU Student Guide Admin',
-  description: 'Admin Dashboard for FOMSCU Student Guide',
+  title: 'لوحة التحكم - FOMNINU Student Guide Admin',
+  description: 'Admin Dashboard for FOMNINU Student Guide',
 };
 
 export default function RootLayout({

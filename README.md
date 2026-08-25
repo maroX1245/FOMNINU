@@ -1,18 +1,18 @@
-# 🏥 FOMSCU Student Guide - دليل الطالب
+# 🏥 FOMNINU Student Guide - دليل الطالب
 
 <div align="center">
 
-![FOMSCU Logo](https://img.shields.io/badge/FOMSCU-Medical%20Guide-005b96?style=for-the-badge&logo=medical)
+![FOMNINU Logo](https://img.shields.io/badge/FOMNINU-Medical%20Guide-005b96?style=for-the-badge&logo=medical)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
 ![React Three Fiber](https://img.shields.io/badge/3D-R3F-06b6d4?style=for-the-badge&logo=three.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue?style=for-the-badge&logo=typescript)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?style=for-the-badge&logo=postgresql)
 
-**دليل الطالب الرسمي - كلية الطب البشري - جامعة قناة السويس 2023-2024**
+**دليل الطالب الرسمي - كلية الطب البشري - جامعة الإسماعيلية الوطنية الجديدة FOMNINU 2026-2031**
 
 🎓 **Full-Stack Arabic Medical Education Website with 3D Graphics**
 
-*Developed by Mohamed Magdy - 5th Year Medical Student at FOMSCU*
+*Developed by Mohamed Magdy - 5th Year Medical Student at FOMNINU*
 
 </div>
 
@@ -38,8 +38,10 @@
 - `GuideContent`: Dynamic CMS for student guide sections
 - `StudentComplaint`: Student complaint submission system
 - `ElectiveCourse`: Elective courses catalog
-- `TimelineMilestone`: College history milestones
-- `ProgramPhase`: Curriculum phases structure
+- `Module`: Detailed module information
+- `ExamType`: Exam types and grading
+- `StudentGroup`: Group A & B information
+- `AttendanceRule`: Attendance policies
 
 ---
 
@@ -96,7 +98,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 FOMNINU/
 ├── prisma/
 │   ├── schema.prisma          # Database schema
-│   └── seed.ts                # Database seed data
+│   └── seed.ts               # Database seed data
 ├── src/
 │   ├── app/
 │   │   ├── api/               # API Routes
@@ -126,7 +128,7 @@ FOMNINU/
 │   └── lib/
 │       ├── prisma.ts         # Prisma client singleton
 │       └── auth.ts           # NextAuth configuration
-├── public/                   # Static assets
+├── public/images/            # University images
 ├── tailwind.config.ts        # Tailwind configuration
 ├── next.config.mjs           # Next.js configuration
 └── package.json
@@ -197,14 +199,34 @@ Access the admin panel at `/admin`
 
 ---
 
+## 📚 المحتوى | Content
+
+### الموديولات | Modules
+- **How to Learn** (2 weeks)
+- **Foundation 1** (7 weeks - 6 subjects)
+- **Foundation 2** (7 weeks - 9 subjects)
+- **Foundation 3** (9 weeks - 9 subjects + Research)
+- **Musculoskeletal** (6 weeks - Systemic)
+
+### الامتحانات | Exams
+| Exam | Percentage |
+|------|------------|
+| MCQ Mid-module | 10% |
+| OSPE Practical | 40% |
+| MCQ Final | 15% |
+| MEQ Final | 15% |
+| Portfolio | 20% |
+
+---
+
 ## 👨‍💻 Developer | المطور
 
 <div align="center">
 
 **Mohamed Magdy**  
 🎓 5th Year Medical Student  
-🏥 Faculty of Medicine, Suez Canal University (FOMSCU)  
-📅 Class of 2023-2024
+🏥 Faculty of Medicine, New Ismailia National University (FOMNINU)  
+📅 Class of 2026-2031
 
 </div>
 
@@ -212,21 +234,22 @@ Access the admin panel at `/admin`
 
 ## 📄 License | الترخيص
 
-This project is for educational purposes. All rights reserved © 2024
+This project is for educational purposes. All rights reserved © 2026
 
 ---
 
 ## 🙏 Acknowledgments | الشكر والتقدير
 
-- Faculty of Medicine, Suez Canal University
+- Faculty of Medicine, New Ismailia National University
 - Next.js and React communities
 - Three.js and React Three Fiber teams
 - All medical students who contributed feedback
+- M TEAM by Marwan Essa (for the original PDF guide)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ and 🩺 for FOMSCU Students**
+**Made with ❤️ and 🩺 for FOMNINU Students**
 
 </div>

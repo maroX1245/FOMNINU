@@ -1,7 +1,7 @@
 'use client';
 
 // Footer Component
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import { motion } from 'framer-motion';
 
@@ -10,12 +10,12 @@ export default function Footer() {
     <footer className="relative py-12 border-t border-white/10">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* About */}
+                   {/* About */}
           <div>
             <h4 className="font-bold text-lg mb-4 neon-text">عن الدليل</h4>
             <p className="text-white/60 text-sm leading-relaxed">
-              دليل الطالب الرسمي لكلية الطب البشري - جامعة قناة السويس
-              للعام الجامعي ٢٠٢٣-٢٠٢٤
+              دليل الطالب الرسمي لكلية الطب البشري - جامعة الإسماعيلية الوطنية الجديدة FOMNINU
+              للعام الجامعي ٢٠٢٦-٢٠٣١
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
           className="pt-8 border-t border-white/10 text-center"
         >
           <p className="text-white/50 text-sm mb-2">
-            © ٢٠٢٤ جميع الحقوق محفوظة - كلية الطب البشري - جامعة قناة السويس
+            © ٢٠٢٦ جميع الحقوق محفوظة - كلية الطب البشري - جامعة الإسماعيلية الوطنية الجديدة FOMNINU
           </p>
           <p className="text-medical-cyan font-medium">
             🎓 تم التطوير Full-Stack بواسطة:{' '}
@@ -61,7 +61,7 @@ export default function Footer() {
             >
               محمد مجدي
             </a>
-            {' '} - طالب طب بشري سنة خامسة - FOMSCU
+            {' '} - طالب طب بشري سنة خامسة - FOMNINU
           </p>
           <p className="text-white/40 text-xs mt-2">
             Built with Next.js, React Three Fiber, and Prisma

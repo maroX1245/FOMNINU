@@ -1,6 +1,6 @@
-// FOMSCU Student Guide - Comprehensive Database Seed
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
-// Version: 2026-2031
+// FOMNINU Student Guide - Comprehensive Database Seed
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
+// New Ismailia National University - Version: 2026-2031
 
 import { PrismaClient, ComplaintStatus, ModuleType, ResourceType } from '@prisma/client';
 import bcrypt from 'bcryptjs';
@@ -8,7 +8,7 @@ import bcrypt from 'bcryptjs';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌟 Seeding FOMSCU Student Guide Database (2026-2031)...');
+  console.log('🌟 Seeding FOMNINU Student Guide Database (2026-2031)...');
 
   // Create default admin
   const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD || 'admin123', 12);

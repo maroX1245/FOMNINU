@@ -1,7 +1,7 @@
 'use client';
 
 // Admin Login Page
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
@@ -50,7 +50,7 @@ function LoginForm() {
             <span className="text-white font-bold text-3xl">F</span>
           </div>
           <h1 className="text-2xl font-bold neon-text">لوحة التحكم</h1>
-          <p className="text-white/50 mt-2">FOMSCU Student Guide</p>
+          <p className="text-white/50 mt-2">FOMNINU Student Guide</p>
         </div>
 
         {/* Login Form */}

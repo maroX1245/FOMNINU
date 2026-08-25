@@ -1,6 +1,6 @@
-// FOMSCU Student Guide Database Schema - Updated with Course Details
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
-// Version: 2026-2031
+// FOMNINU Student Guide Database Schema - Updated with Course Details
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
+// New Ismailia National University - Version: 2026-2031
 
 generator client {
   provider = "prisma-client-js"

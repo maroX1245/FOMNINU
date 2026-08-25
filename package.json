@@ -1,7 +1,8 @@
 {
-  "name": "fomscu-student-guide",
+  "name": "fomninu-student-guide",
   "version": "1.0.0",
   "private": true,
+  "description": "Student Guide for New Ismailia National University (FOMNINU) - Faculty of Medicine",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

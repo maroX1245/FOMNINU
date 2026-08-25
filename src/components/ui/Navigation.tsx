@@ -1,7 +1,7 @@
 'use client';
 
 // Glassmorphism Navigation Component
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -48,9 +48,9 @@ export default function Navigation({ scrollToSection }: NavProps) {
           <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-medical-cyan to-medical-blue flex items-center justify-center">
             <span className="text-white font-bold text-lg">F</span>
           </div>
-          <span className="font-bold text-lg hidden md:block neon-text">
-            دليل FOMSCU
-          </span>
+<span className="font-bold text-lg hidden md:block neon-text">
+              دليل FOMNINU
+            </span>
         </motion.div>
 
         {/* Desktop Navigation */}

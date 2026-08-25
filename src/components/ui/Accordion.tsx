@@ -1,7 +1,7 @@
 'use client';
 
 // Animated Accordion Component
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';

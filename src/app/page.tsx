@@ -1,10 +1,12 @@
 'use client';
 
-// Main Page Component - Complete FOMSCU Guide
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Main Page Component - Complete FOMNINU Guide
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
+// New Ismailia National University - Faculty of Medicine
 
 import { useRef, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation, GlassCard, ComplaintForm, Accordion, AnimatedPieChart, Section, Footer } from '@/components/ui';
 
@@ -14,7 +16,7 @@ const ParticleBackground = dynamic(() => import('@/components/3d/ParticleBackgro
 const Timeline3D = dynamic(() => import('@/components/3d/Timeline3D'), { ssr: false });
 const StrategyIcons3D = dynamic(() => import('@/components/3d/AnimatedIcons'), { ssr: false });
 
-// FOMSCU System Data from PDF
+// FOMNINU System Data from PDF
 const modulesData = [
   {
     name: 'How to Learn',
@@ -173,9 +175,27 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            {/* University Badge */}
+            <motion.div
+              className="mb-6"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.3, type: 'spring' }}
+            >
+              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-medical-cyan shadow-lg shadow-medical-cyan/30 bg-slate-800">
+                <Image
+                  src="/images/campus1.jpg"
+                  alt="FOMNINU Campus"
+                  width={128}
+                  height={128}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </motion.div>
+            
             <div className="mb-4">
               <span className="inline-block px-4 py-2 rounded-full bg-medical-cyan/20 text-medical-cyan text-sm mb-4">
-                🎓 FOMSCU 2026-2031
+                🏥 FOMNINU 2026-2031
               </span>
             </div>
             
@@ -183,7 +203,7 @@ export default function Home() {
               <span className="neon-text">نظامك في كبسولة</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-white/80 mb-4">
-              شرح نظام كلية الطب البشري
+              كلية الطب البشري - جامعة الإسماعيلية الوطنية الجديدة
             </h2>
             <motion.p
               className="text-3xl md:text-5xl font-bold text-white/90 mb-8"
@@ -191,7 +211,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              جامعة قناة السويس
+              FOMNINU
             </motion.p>
 
             <motion.div
@@ -238,6 +258,22 @@ export default function Home() {
       <Section id="about" className="bg-slate-900/50 backdrop-blur-sm">
         <div ref={sectionRefs.about}>
           <h2 className="section-title neon-text">🎯 نظرة عامة على النظام</h2>
+          
+          {/* University Image */}
+          <motion.div
+            className="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <Image
+              src="/images/campus2.jpg"
+              alt="جامعة الإسماعيلية الوطنية الجديدة"
+              width={800}
+              height={400}
+              className="w-full h-64 object-cover"
+            />
+          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
             <GlassCard delay={0.1}>

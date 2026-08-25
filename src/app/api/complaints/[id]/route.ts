@@ -1,5 +1,5 @@
 // Complaint Detail API Route
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';

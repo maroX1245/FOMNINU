@@ -1,17 +1,18 @@
-// Root Layout
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Root Layout - FOMNINU Student Guide
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
+// New Ismailia National University
 
 import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'دليل الطالب - كلية الطب البشري - جامعة قناة السويس | FOMSCU 2023-2024',
-  description: 'الدليل الرسمي للطالب في كلية الطب البشري بجامعة قناة السويس - دليل شامل للبرامج التعليمية والاستراتيجيات والتقييمات',
-  keywords: ['FOMSCU', 'جامعة قناة السويس', 'كلية الطب', 'دليل الطالب', 'طب بشري'],
+  title: 'نظامك في كبسولة - كلية الطب البشري - جامعة الإسماعيلية الوطنية الجديدة | FOMNINU 2026-2031',
+  description: 'الدليل الرسمي للطالب في كلية الطب البشري بجامعة الإسماعيلية الوطنية الجديدة FOMNINU - دليل شامل للبرامج التعليمية والاستراتيجيات والتقييمات',
+  keywords: ['FOMNINU', 'جامعة الإسماعيلية الوطنية الجديدة', 'كلية الطب', 'دليل الطالب', 'طب بشري', 'New Ismailia National University'],
   authors: [{ name: 'Mohamed Magdy' }],
   openGraph: {
-    title: 'دليل الطالب - كلية الطب البشري - جامعة قناة السويس',
-    description: 'الدليل الرسمي للطالب 2023-2024',
+    title: 'نظامك في كبسولة - كلية الطب البشري - FOMNINU',
+    description: 'الدليل الرسمي للطالب 2026-2031',
     locale: 'ar_EG',
     type: 'website',
   },

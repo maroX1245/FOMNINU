@@ -1,7 +1,7 @@
 'use client';
 
 // Session Provider
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import { SessionProvider } from 'next-auth/react';
 

@@ -1,7 +1,7 @@
 'use client';
 
 // 3D Interactive Timeline Component
-// Developer: Mohamed Magdy - 5th Year Medical Student at FOMSCU
+// Developer: Mohamed Magdy - 5th Year Medical Student at FOMNINU
 
 import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
